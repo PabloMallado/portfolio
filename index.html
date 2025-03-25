@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio - Pablo Mallado</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <!-- Header y Navegación -->
+  <header id="inicio">
+    <nav>
+      <div class="container nav-container">
+        <div class="logo">
+          <a href="#inicio">Pablo Mallado</a>
+        </div>
+        <!-- Botón hamburguesa con 3 spans -->
+        <button class="nav-toggle" aria-label="Abrir menú">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#about">Sobre Mí</a></li>
+          <li><a href="#skills">Habilidades</a></li>
+          <li><a href="#projects">Proyectos</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="hero">
+      <div class="container hero-content">
+        <h1>Pablo Mallado Troyano</h1>
+        <p>Desarrollador de Aplicaciones Web</p>
+        <p class="intro">
+          Creo aplicaciones innovadoras y atractivas. ¡Descubre mi trabajo y contáctame para colaborar!
+        </p>
+        <div class="cta-buttons">
+          <a href="#projects" class="btn">Ver Proyectos</a>
+          <a href="#contact" class="btn">Contacto</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+ <!-- Sección "Sobre Mí" -->
+<section id="about" class="section">
+    <div class="container about-section">
+      <div class="about-text">
+        <h2>Sobre Mí</h2>
+        <p>
+          Soy un apasionado del desarrollo web y móvil. Actualmente curso un Grado Superior en Desarrollo de Aplicaciones Multiplataforma, donde perfecciono mis habilidades técnicas y creativas. Mi objetivo es aprender constantemente y superar desafíos, brindando soluciones de alta calidad.
+        </p>
+        <p>
+          Me encanta trabajar en equipo y enfrentar nuevos retos. Siempre busco oportunidades para crecer profesionalmente y aportar valor en cada proyecto.
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="WhatsApp Image 2025-03-25 at 18.58.15.jpeg" alt="Imagen de Pablo Mallado" />
+      </div>
+    </div>
+  </section>
+  
+
+    <!-- Sección de Habilidades -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2>Habilidades</h2>
+        <div class="skills-grid">
+          <div class="skill">
+            <img src="1175208.webp" alt="HTML" />
+            <p>HTML</p>
+          </div>
+          <div class="skill">
+            <img src="descarga.png" alt="CSS" />
+            <p>CSS</p>
+          </div>
+          <div class="skill">
+            <img
+              src="javascript-logo-javascript-icon-transparent-free-png.webp"
+              alt="JavaScript"
+            />
+            <p>JavaScript</p>
+          </div>
+          <div class="skill">
+            <img src="226777.png" alt="Java" />
+            <p>Java</p>
+          </div>
+          <div class="skill">
+            <img src="Git_icon.svg.png" alt="Git" />
+            <p>Git</p>
+          </div>
+          <div class="skill">
+            <img src="mysql-5-logo-png-transparent.png" alt="MySQL" />
+            <p>MySQL</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Proyectos -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Proyectos</h2>
+        <div class="projects-grid">
+
+          <!-- Proyecto 1 -->
+          <article class="project-card">
+            <div class="project-image-container">
+              <img
+                src="images.jfif"
+                alt="Proyecto Java Básico"
+              />
+            </div>
+            <div class="project-info">
+              <h3>Java Básico</h3>
+              <p>
+                Proyecto para asimilar conceptos fundamentales de Java: variables,
+                estructuras de control y funciones.
+              </p>
+              <a
+                href="https://github.com/PabloMallado/Java-Basico"
+                class="btn"
+                target="_blank"
+                >Ver más</a
+              >
+            </div>
+          </article>
+
+          <!-- Proyecto 2 -->
+          <article class="project-card">
+            <div class="project-image-container">
+              <img
+                src="Frameworks-java.webp"
+                alt="Proyecto POO I"
+              />
+            </div>
+            <div class="project-info">
+              <h3>POO I</h3>
+              <p>
+                Introducción a la Programación Orientada a Objetos: clases, objetos y
+                encapsulamiento.
+              </p>
+              <a
+                href="https://github.com/PabloMallado/POOI"
+                class="btn"
+                target="_blank"
+                >Ver más</a
+              >
+            </div>
+          </article>
+
+          <!-- Proyecto 3 -->
+          <article class="project-card">
+            <div class="project-image-container">
+              <img
+                src="poo-java-interfaces.webp"
+                alt="Proyecto POO II"
+              />
+            </div>
+            <div class="project-info">
+              <h3>POO II</h3>
+              <p>
+                Exploración de conceptos avanzados de POO: herencia, interfaces,
+                enumeraciones y polimorfismo.
+              </p>
+              <a
+                href="https://github.com/PabloMallado/POOII"
+                class="btn"
+                target="_blank"
+                >Ver más</a
+              >
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contact" class="section">
+      <div class="container contact-section">
+        <h2>Contacto</h2>
+        <p>
+          ¿Tienes un proyecto en mente o deseas colaborar? ¡Contáctame y trabajemos
+          juntos para hacerlo realidad!
+        </p>
+        <div class="contact-info">
+          <p><span>📧</span> <a href="mailto:malladotroyanopablo@gmail.com">malladotroyanopablo@gmail.com</a></p>
+          <p><span>📞</span> 678 138 772</p>
+          <p><span>🌍</span> Sevilla, España</p>
+        </div>
+        <div class="social-links">
+          <a
+            href="https://github.com/PabloMallado"
+            target="_blank"
+            class="btn"
+            >GitHub</a
+          >
+          <a
+            href="docs/cv_pablo_mallado.pdf"
+            download
+            class="btn"
+            >Descargar CV</a
+          >
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Pablo Mallado Troyano. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <button id="backToTop" aria-label="Volver al inicio">↑</button>
+  <script src="script.js"></script>
+</body>
+</html>

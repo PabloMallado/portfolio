@@ -1,0 +1,439 @@
+/* Variables de colores y degradados */
+:root {
+    --primary-color: #ff7e67;       /* Color principal (botones y acentos) */
+    --primary-color-dark: #e36d58;  /* Versión oscura para hover */
+    --text-color: #f1f1f1;          /* Color del texto */
+    --accent-color: #f39c12;
+    --light-gray: #ccc;
+    /* Fondo unificado para toda la página */
+    --background-gradient: linear-gradient(135deg, #0f172a, #203a43);
+  }
+  
+  /* Reset y estilos globales */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background-gradient);
+    color: var(--text-color);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+  }
+  
+  /* Contenedor principal */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Navegación */
+  nav {
+    background: rgba(0, 0, 0, 0.8);
+    /* Eliminado position: fixed; */
+    border-bottom: 1px solid var(--light-gray);
+    width: 100%;
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+  }
+  
+  .logo a {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  /* Menú principal */
+  .nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-menu li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    position: relative; /* Para el subrayado animado */
+    transition: color 0.3s;
+  }
+  
+  /* Subrayado animado en enlaces del menú */
+  .nav-menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+  }
+  .nav-menu li a:hover::after {
+    width: 100%;
+  }
+  .nav-menu li a:hover {
+    color: var(--primary-color);
+  }
+  
+  /* Botón hamburguesa con 3 spans */
+  .nav-toggle {
+    display: none; /* Oculto en escritorio, se muestra en móvil */
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--text-color);
+    margin: 5px 0;
+  }
+  
+  /* Hero */
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    margin-top: 0; /* Ya no compensamos nav fija */
+    min-height: 100vh;
+  }
+  
+  .hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    animation: fadeInDown 1s ease-out;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  .cta-buttons {
+    margin-top: 20px;
+  }
+  
+  /* Botones */
+  .btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 5px;
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  .btn:hover {
+    background: var(--primary-color-dark);
+    transform: translateY(-3px);
+    animation: pulse 1.5s infinite;
+  }
+  
+  /* Secciones */
+  .section {
+    padding: 80px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .section.appear {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .section h2 {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+    color: var(--text-color);
+  }
+  
+  .section h2::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background: var(--primary-color);
+    bottom: -10px;
+    left: 25%;
+  }
+  
+  /* Sección "Sobre Mí" */
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas: texto e imagen */
+    align-items: center;
+    gap: 20px;
+    padding: 40px 0; /* Opcional: espacio adicional vertical */
+  }
+  
+  .about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+  }
+  
+  .about-text p {
+    margin-bottom: 20px;
+  }
+  
+  /* Limitar el tamaño del contenedor de imagen */
+  .about-image {
+    max-width: 400px;  /* La imagen no excederá este ancho */
+    margin: 0 auto;    /* Centrado horizontal */
+  }
+  
+  .about-image img {
+    width: 100%;       /* Ocupa el 100% del contenedor */
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+  }
+  
+  /* Ajuste para móviles */
+  @media (max-width: 768px) {
+    .about-section {
+      grid-template-columns: 1fr;  /* Una sola columna en móviles */
+      text-align: center;
+    }
+    .about-image {
+      margin: 20px auto 0;
+    }
+  }
+  
+  
+  /* Habilidades */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  .skill {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: zoomIn 0.5s ease-out;
+  }
+  
+  .skill:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  }
+  
+  .skill img {
+    width: 60px;
+    margin-bottom: 10px;
+  }
+  
+  /* Proyectos */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+  
+  /* Tarjeta blanca con imagen arriba */
+  .project-card {
+    background: rgba(255, 255, 255, 0.9); /* O #f9f9f9 */
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    color: #333; /* Asegúrate de que el texto contraste bien */
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-image-container {
+    width: 100%;
+    height: 200px;             /* Ajusta la altura de la imagen a tu gusto */
+    overflow: hidden;
+  }
+  
+  .project-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.5);
+  }
+  
+  .project-info {
+    padding: 20px;
+  }
+  
+  .project-info h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+  }
+  
+  .project-info p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+  }
+  
+  /* Contacto */
+  .contact-section {
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .contact-info p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    color: var(--text-color);
+  }
+  
+  .contact-info span {
+    margin-right: 10px;
+    color: var(--primary-color);
+  }
+  
+  .social-links {
+    margin-top: 20px;
+  }
+  
+  /* Footer */
+  footer {
+    background: rgba(0,0,0,0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    color: var(--light-gray);
+  }
+  
+  /* Botón "Volver arriba" */
+  #backToTop {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    z-index: 1000;
+    transition: opacity 0.3s;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .nav-menu {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: rgba(0,0,0,0.9);
+      flex-direction: column;
+      width: 200px;
+      padding: 20px;
+      display: none;
+    }
+    .nav-menu.active {
+      display: flex;
+    }
+    .nav-toggle {
+      display: block; /* Mostrar hamburguesa en móvil */
+    }
+    .about-section {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  }
+  
+  /* -------------------------
+     Animaciones Personalizadas
+  ------------------------- */
+  
+  /* Aparición suave desde arriba */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Aparición suave desde abajo */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Efecto pulse para botones */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Animación zoomIn */
+  @keyframes zoomIn {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
